@@ -1,0 +1,46 @@
+<html>
+<!-- id="ng-app" IE<8 -->
+<head>
+  <title>Simple example</title>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-12-sm">
+      <h1>Elasticsearch Status</h1>
+      <ul class="indexList">
+        <li ng-repeat="index in ctrl.indices">
+          <a href="#/index/{{index}}">{{ index }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container" ng-controller="helloController">
+      <div class="row">
+        <div class="col-12-sm">
+          <div>
+            <h3>Upload File</h3>
+            <br>
+            <!-- Example: nv-file-drop="" uploader="{Object}" options="{Object}" filters="{String}" -->
+          <div over-class="another-file-over-class" class="my-drop-zone">
+              Drop Files Here...
+          </div>
+
+
+          </div>
+          <div ng-controller="MainCtrl" class="container">
+              <input type="file" on-read-file="showContent($fileContent)" />
+              <div ng-if="content">
+                  <h2>File content is:</h2>
+                  <pre>{{ content }}</pre>
+              </div>
+          </div>
+        </div>
+        <p>The current time is {{ currentTime }}</p>
+        </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>
